@@ -1,0 +1,67 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KMSystem</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+
+  <body background="/static/img.png">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="{{ url_for('main.index') }}" class="brand-logo">KMSystem</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% if current_user.is_authenticated %}
+          <li>
+            <a href="{{ url_for('main.profile') }}">
+              Perfil
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('main.publicaciones') }}">
+              Publicaciones
+            </a>
+          </li>
+          {% endif %} {% if not current_user.is_authenticated %}
+          <li>
+            <a href="{{ url_for('auth.login') }}">
+              Iniciar Sesion
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('auth.signup') }}">
+              Registarme
+            </a>
+          </li>
+
+          {% endif %} {% if current_user.is_authenticated %}
+          <li>
+            <a href="{{ url_for('auth.logout') }}">
+              Cerrar Sesion
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container light-green lighten-5">
+      {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
