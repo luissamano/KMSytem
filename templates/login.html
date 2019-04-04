@@ -5,9 +5,13 @@
   <h3 class="title">Iniciar Sesion</h3>
   <div class="box">
     {% with messages = get_flashed_messages() %} {% if messages %}
-    <div class="notification is-danger">
-      {{ messages[0] }}
-    </div>
+    <script>
+      M.toast({
+        html:
+          "Por favor, compruebe sus datos de inicio de sesión y vuelva a intentarlo.",
+        classes: "rounded"
+      });
+    </script>
     {% endif %} {% endwith %}
     <form class="row col s12" method="POST" action="/login">
       <div class="row">
