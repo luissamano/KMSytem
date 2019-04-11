@@ -1,30 +1,29 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-<div class="row">
-    <form class="col s12">
+<div class="container row">
+  <form class="col s12" method="POST" action="/emailpost">
+    <div class="input-field col s12">
+      <input id="to" type="text" class="validate" />
+      <label for="to">Enviar a: </label>
+    </div>
+    <div class="input-field col s12">
+      <input id="subject" type="text" class="validate" />
+      <label for="subject">Asunto: </label>
+    </div>
 
-        <div class="input-field col s8">
-            <input placeholder="Placeholder" id="email_to" type="text" class="validate">
-            <label for="email_to">Enviar a: </label>
-        </div>
-        <div class="input-field col s8">
-            <input placeholder="Placeholder" id="asunto" type="text" class="validate">
-            <label for="asunto">Asunto: </label>
-        </div>
+    <br />
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="body" class="materialize-textarea"></textarea>
+        <label for="body">Mensaje</label>
+      </div>
+    </div>
 
-        <br />
-        <div class="row">
-            <div class="input-field col s8">
-                <textarea id="body" class="materialize-textarea"></textarea>
-                <label for="body">Mensaje</label>
-            </div>
-        </div>
-
-        <br />
-        <button class="btn waves-effect waves-light" type="submit" name="enviar">Enviar
-            <i class="material-icons right">send</i>
-        </button>
-    </form>
+    <br />
+    <button class="btn waves-effect waves-light" type="submit" name="enviar">
+      Enviar
+      <i class="material-icons right">send</i>
+    </button>
+  </form>
 </div>
 {% endblock %}

@@ -26,7 +26,9 @@ def login_post():
     # check if user actually exists
     # take the user supplied password, hash it, and compare it to the hashed password in database
     if not user or not check_password_hash(user.password, password):
-        flash('Por favor, compruebe sus datos de inicio de sesión y vuelva a intentarlo.')
+        flash(
+            'Por favor, compruebe sus datos de inicio de sesión y vuelva a intentarlo.'
+        )
         # if user doesn't exist or password is wrong, reload the page
         return redirect(url_for('auth.login'))
 
@@ -58,11 +60,13 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
     # Crea un nuevo objecto listo para insertar.
-    new_user = UsuarioModel(email=email,
-                            password=generate_password_hash(
-                                password, method='sha256'),
-                            name=name,
-                            id_area=area, id_puesto=puesto, id_role=role)
+    new_user = UsuarioModel(
+        email=email,
+        password=generate_password_hash(password, method='sha256'),
+        name=name,
+        id_area=area,
+        id_puesto=puesto,
+        id_role=role)
 
     # Agrega el nuevo usuario a la base de datos.
     db.session.add(new_user)

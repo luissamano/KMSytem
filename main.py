@@ -25,4 +25,7 @@ def publicaciones():
 
 @main.route('/sendemail')
 def email():
-   return render_template('email.html', name=current_user.name, tipo_usuario=current_user.id_role)
+    return render_template(
+        'email.html',
+        name=current_user.name,
+        tipo_usuario=current_user.id_role)
