@@ -51,3 +51,4 @@ class PublicacionModel(db.Model):
     asunto = db.Column(db.String(100), nullable=False)
     descripcion = db.Column(db.String(200), nullable=True)
     documento = db.Column(db.String(200), nullable=False)
+    

@@ -3,54 +3,33 @@
 {% extends "base.html" %} {% block content %}
 <h4 class="title">Publicaciones de, {{ name }}!</h4>
 
-Second Line grade play_arrowTitle First Line Second Line grade
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+</div>
 
 <div>
   <ul class="collection">
+  {% for elem in result -%}
     <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle" />
-      <span class="title">Title</span>
+      <img src="{{elem.documento}}" alt="" class="circle" />
+      <span class="title">{{ elem.asunto }}</span>
+      <br />
       <p>
-        First Line <br />
-        Second Line
+        {{ elem.id_user }}
+      </p>
+      <p>
+        {{ elem.descripcion }}
       </p>
       <a href="#!" class="secondary-content"
         ><i class="material-icons">grade</i></a
       >
     </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Title</span>
-      <p>
-        First Line <br />
-        Second Line
-      </p>
-      <a href="#!" class="secondary-content"
-        ><i class="material-icons">grade</i></a
-      >
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>
-        First Line <br />
-        Second Line
-      </p>
-      <a href="#!" class="secondary-content"
-        ><i class="material-icons">grade</i></a
-      >
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>
-        First Line <br />
-        Second Line
-      </p>
-      <a href="#!" class="secondary-content"
-        ><i class="material-icons">grade</i></a
-      >
-    </li>
+  {% endfor -%}
   </ul>
 </div>
 {% endblock %}
+
+

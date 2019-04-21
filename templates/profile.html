@@ -1,33 +1,80 @@
 <!-- templates/profile.html -->
 
 {% extends "base.html" %} {% block content %}
-<h4 class="title">Bienvenido, {{ name }}!</h4>
+<h4 class="title">Bienvenido, {{ user.name }}!</h4>
 
 <div class="row">
   <div class="col s12">
     <div class="col s6">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img
-            width="50"
-            height="350"
-            class="activator"
-            src="/static/0bb6cdb7-1d23-4a2f-b728-73647e58a69c.jpg"
-          />
+          <img width="50" height="350" class="activator" src="/static/0bb6cdb7-1d23-4a2f-b728-73647e58a69c.jpg" />
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"
-            >{{ name }}<i class="material-icons right">more_vert</i></span
-          >
-          <p><a href="#">Editar</a></p>
+          <span class="card-title activator grey-text text-darken-4">{{ name }}<i
+              class="material-icons right">more_vert</i></span>
+          
         </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"
-            >Biografia<i class="material-icons right">close</i></span
-          >
+        <div class="card-reveal">VALUES ('4', 'Estructura de la Red', 'Detallado de la configuracion de la red', '/static/pp.jpeg');
+          <span class="card-title grey-text text-darken-4">Biografia<i class="material-icons right">close</i></span>
           <p>Ingeniero en Computacion.</p>
         </div>
       </div>
+    </div>
+    <div class="col s6 card-panel">
+        <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>Abrir</span>
+                <input type="file" multiple>
+              </div>
+              <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="...">
+                </div>  
+            </div>
+
+            <div class="row">
+              <div class="control input-field col s12">
+                <input type="email" name="email" placeholder="{{user.email}}"/>
+                <label for="email">Email</label>
+              </div>
+            </div>
+
+              <div class="row">
+                <div class="control input-field col s12">
+                  <input type="text" name="nombre" placeholder="{{user.name}}"/>
+                  <label for="nombre">Nombre</label>
+                </div>
+              </div>
+
+                <div class="row">
+                  <div class="control input-field col s12">
+                    <input type="password" name="password" placeholder="************" />
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+
+                <div class="col s12">
+                  <div class="control input-field col s4">
+                    <input type="text" name="role" placeholder="{{user.id_role}}" text="{{user.id_role}}" />
+                    <label for="role">Role</label>
+                  </div>
+
+                  <div class="control input-field col s4">
+                    <input type="text" name="area" placeholder="{{user.id_area}}" />
+                    <label for="area">Area</label>
+                  </div>
+
+                  <div class="control input-field col s4">
+                    <input type="text" name="puesto" placeholder="{{user.id_puesto}}" />
+                    <label for="puesto">Puesto</label>
+                  </div>
+
+                </div>
+                
+          </form>
+
+
     </div>
   </div>
 </div>
