@@ -84,14 +84,11 @@ def newpost_db():
     desc = request.form.get('descripcion')
     archivo = request.form.get('archivo')
 
-    print("buscando rutas")
     ruta = os.getcwd() + os.sep
     origen = '/home/samanocedillo/Documentos/' + archivo
     destino = ruta + 'static/docs/' + archivo
 
-    print("rutas encontradas {}, {}".format(origen, destino))
     if os.path.exists(origen):
-        print("entre")
         with open(origen, 'rb') as forigen:
             with open(destino, 'wb') as fdestino:
                 shutil.copyfileobj(forigen, fdestino)
@@ -117,6 +114,21 @@ def newpost_db():
 @login_required
 def save_changes_user():
 
+    archivo = request.form.get('img')
+
+    ruta = os.getcwd() + os.sep
+    origen = '/home/samanocedillo/Imágenes/' + archivo
+    destino = ruta + 'static/' + archivo
+
+    if os.path.exists(origen):
+        with open(origen, 'rb') as forigen:
+            with open(destino, 'wb') as fdestino:
+                shutil.copyfileobj(forigen, fdestino)
+                print("Archivo copiado")
+
+
+
+    current_user.img = '/static/' + archivo
     current_user.email = request.form.get('email')
     current_user.name = request.form.get('nombre')
 

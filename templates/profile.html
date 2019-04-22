@@ -15,9 +15,9 @@
               class="material-icons right">more_vert</i></span>
           
         </div>
-        <div class="card-reveal">VALUES ('4', 'Estructura de la Red', 'Detallado de la configuracion de la red', '/static/pp.jpeg');
+        <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Biografia<i class="material-icons right">close</i></span>
-          <p>Ingeniero en Computacion.</p>
+          <p>Ingeniero en Computacion. {{user.img }}</p>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
                 <input type="file" multiple>
               </div>
               <div class="file-path-wrapper">
-                  <input class="file-path validate" name="img" type="text" placeholder="...">
+                  <input class="file-path validate" name="img" id="img" type="text" placeholder="Archivo...">
                 </div>  
             </div>
 
@@ -75,14 +75,10 @@
 
                 </div>
 
-                {% if user.id_role == 2 %}
-                  <button class="btn waves-effect waves-light" type="submit" name="action">
+                <button class="btn waves-effect waves-light" type="submit" name="action">
                     Guardar cambios
                     <i class="material-icons right">save</i>
                 </button>
-                  {% else %}
-                    <h6>No cuentas con los permisos para realizar cambios</h6>
-                  {% endif %}
                 
           </form>
 
