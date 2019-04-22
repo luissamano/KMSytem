@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %} 
+<br>
+<h5>Registar una area nueva</h5>
+<div class="card-panel">
+
+    <form class="row col s12" method="POST" action="/save_area">      
+      <div class="row">
+        <div class="control input-field col s8">
+          <input class="icon_prefix" type="text" name="area" />
+        </div>
+      </div>
+
+       <button class="btn waves-effect waves-light col" type="submit" name="action">
+          Guardar
+       </button>
+    </form>
+
+</div>
+
+
+<br>
+<h5>Registar un puesto nuevo</h5>
+<div class="card-panel">
+
+    <form class="row col s12" method="POST" action="/save_puesto">      
+      <div class="row col s6">
+        <div class="control input-field col s12">
+          <input class="icon_prefix" type="text" name="id_area" />
+        </div>
+      </div>
+
+      <div class="row col s6">
+        <div class="control input-field col s12">
+          <input class="icon_prefix" type="text" name="descripcion" />
+        </div>
+      </div>
+      
+
+       <button class="btn waves-effect waves-light col" type="submit" name="action">
+          Guardar
+       </button>
+    </form>
+
+</div>
+
+{% endblock %}

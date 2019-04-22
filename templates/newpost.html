@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+<br>
+<div class="card-panel">
+    <form class="row col s12" method="POST" action="/newpost">
+      
+      <div class="row">
+        <div class="control input-field col s12">
+          <i class="material-icons prefix">subject</i>
+          <input class="icon_prefix" type="text" name="asunto" />
+          <label for="icon_prefix">Asunto</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">description</i>
+          <textarea id="descripcion" name="descripcion" class="materialize-textarea"></textarea>
+          <label for="descripcion">Descripcion</label>
+        </div>
+      </div>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Abrir</span>
+          <input type="file" multiple>
+        </div>
+        
+        <div class="file-path-wrapper">
+          <input class="file-path validate" name="archivo" id="archivo" type="text" placeholder="Archivo ...">
+        </div>  
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          Guardar
+        </button>
+
+      </div>
+    </form>
+
+</div>
+
+{% endblock %}

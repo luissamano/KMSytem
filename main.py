@@ -36,9 +36,14 @@ def publicaciones():
         return render_template('publicaciones.html', result=items )
 
 
-@main.route('/sendemail')
-def email():
-    return render_template(
-        'email.html',
-        name=current_user.name,
-        tipo_usuario=current_user.id_role)
+@main.route('/newpost')
+@login_required
+def newpost():
+    return render_template('newpost.html', user=current_user)
+
+
+
+@main.route('/nuevodata')
+@login_required
+def nuevodata():
+    return render_template('puesto_area.html')

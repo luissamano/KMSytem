@@ -1,7 +1,7 @@
 <!-- templates/signup.html -->
 
 {% extends "base.html" %} {% block content %}
-<div class="container">
+<div class="">
   <h3 class="title">Registar</h3>
   <div class="box">
     {% with messages = get_flashed_messages() %} {% if messages %}
@@ -14,7 +14,7 @@
       });
     </script>
     {% endif %} {% endwith %}
-    <form method="POST" action="/signup">
+    <form class="card-panel" method="POST" action="/signup">
       <div class="input-field col s12">
         <input name="email" type="text" class="validate" />
         <label for="email">Email</label>

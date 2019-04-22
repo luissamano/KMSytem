@@ -40,6 +40,13 @@
               Publicaciones
             </a>
           </li>
+          {% if current_user.id_role == 2 %}
+          <li>
+            <a href="{{ url_for('main.nuevodata') }}">
+              Agregar dartos
+            </a>
+          </li>
+          {% endif %}
           {% endif %} {% if not current_user.is_authenticated %}
           <li>
             <a href="{{ url_for('auth.login') }}">

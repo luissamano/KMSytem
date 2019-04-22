@@ -34,6 +34,7 @@ class UsuarioModel(UserMixin, db.Model):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
+    img = db.Column(db.String(50))
     id_area = db.Column(db.Integer, db.ForeignKey(
         AreaModel.id), nullable=False)
     id_puesto = db.Column(db.Integer, db.ForeignKey(
