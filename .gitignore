@@ -1,9 +1,9 @@
 # VS Code
-vscode
+/vscode
 
 # pycache
 # Byte-compiled / optimized / DLL files
-__pycache__/
+/__pycache__
 
 # extenciones pyc y sqlite
 *.pyc
