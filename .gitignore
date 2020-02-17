@@ -1,0 +1,10 @@
+# VS Code
+/vscode
+
+# pycache
+# Byte-compiled / optimized / DLL files
+/__pycache__
+
+# extenciones pyc y sqlite
+*.pyc
+*.sqlite
